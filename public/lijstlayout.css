@@ -1,0 +1,57 @@
+.lijsten{
+    padding-top: 3em ;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns:  repeat( auto-fit, minmax(18em, 1fr) );
+    gap: 10px;
+}
+
+.lijst-items{
+    text-decoration: none;
+    width: 100%;
+    border: 1px solid var(--primary-orange);
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lijsten-article{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: max-content max-content 1fr max-content;
+    grid-template-areas: 
+    'image .'
+    'title title'
+    'description description'
+    'huizen huizen';
+    padding: .5em;
+    /* margin: .5em; */
+    border: 3px solid var(--primary-blue);
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    list-style-type: none;
+    justify-content: center;
+    text-align: center;
+    /* margin-left: auto; */
+  /* margin-right: auto; */
+}
+
+.list-title{
+    grid-area: title;
+}
+.list-description{
+    grid-area: description;
+}
+.aantal-huizen{
+    grid-area: huizen;
+    justify-self: end;
+}
+.avatar-image{
+    grid-area: image;
+    height: 4em;
+    width: 4em;
+
+}
