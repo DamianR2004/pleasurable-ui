@@ -1,7 +1,7 @@
 <%- include('./partials/top') %>
 <%- include('./partials/nav') %>`
 
-<section class="lists">
+<!-- <section class="lists">
     <% data.forEach(list => { %>
         <article class="list-items">
         <ul>
@@ -12,4 +12,33 @@
     </ul>
 </article>
    <% }); %>
-</section>
+</section> -->
+
+<h1>Favorieten lijsten</h1>
+
+<section class="lijsten">
+    <% data.forEach(list => { %>
+
+        <a class="lijst-items" href="/lijsten/<%= list.id %>">
+            <article class="lijsten-article">
+
+              <img class="avatar-image" src="https://fdnd-agency.directus.app/assets/<%=list.avatar%>">
+
+              <h2 class="list-title"><%= list.title %></h2>
+
+              
+              <p class="list-description">"<%= list.description %>"</p>
+          
+
+              <p class="aantal-huizen">4 huizen</p>
+
+            </article>
+        </a>
+
+      
+
+   <% }); %>
+</section>  
+
+
+
