@@ -134,10 +134,6 @@ header{
 
     z-index: 1;
 
-    &:hover{
-      background-color: var(--sub-orange);
-    }
-
     & p{
       color: var(--primary-white);
       font-size: .75rem;
@@ -180,7 +176,7 @@ header{
 
       transform: rotate(-45deg);
       background-color: var(--primary-black);
-
+ 
     }
   }
   
