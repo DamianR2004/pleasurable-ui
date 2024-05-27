@@ -16,22 +16,59 @@
     grid-template-columns:  repeat( auto-fit, minmax(18em, 1fr) );
     gap: 1.5em;
 }
-
+/*  */
 .lijst-items{
     text-decoration: none;
     width: 100%;
-    border: 1px solid var(--primary-orange);
+    /* border: 1px solid var(--primary-orange); */
     border-radius: 10px;
     margin: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: none;
+
+    color: #2F56B0;
+    position: relative;
+    text-decoration: none;
+    transition: color .4s ease-out;
 }
-.lijst-items:hover{
-    /* opacity: 0.75; */
-    opacity: 1.5;
-    /* translate: 0 -.5em; */
-    transition: .5s;
-}
+/*  */
+/* p {
+    font-size: 2em;
+    max-width: 80%;
+  } */
+  
+  
+  .lijst-items:hover {
+    /* color: #457DFB; */
+    color: var(--primary-blue);
+    right: 0;
+    text-decoration: none;
+  }
+  
+  .lijst-items:hover:after {
+    /* border-color: #457DFB; */
+    border-color: var(--primary-blue);
+    right: 0;
+  }
+  
+  .lijst-items:after {
+    border-radius: .5em;
+    border-top: .5em solid #457DFB;;
+    content: "";
+    position: absolute;
+      right: 100%;
+      /* bottom: .14em; */
+      bottom: 0;
+      left: 0;
+    transition: right 1s cubic-bezier(0,.5,0,1),
+                border-color 1s ease-out;
+  }
+  
+  .lijst-items:hover:after {
+  right: 0;
+  }
+/*  */
+
 
 .lijsten-article{
     display: grid;
@@ -43,7 +80,7 @@
     'description description'
     'huizen huizen';
     padding: .5em;
-    border: 3px solid var(--primary-blue);
+    /* border: 3px solid var(--primary-orange); */
     border-radius: 10px;
     width: 100%;
     height: 200px;
@@ -71,5 +108,6 @@
     grid-area: image;
     height: 4em;
     width: 4em;
+    opacity: 0;
 
 }
