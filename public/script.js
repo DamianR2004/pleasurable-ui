@@ -9,3 +9,11 @@ function openMenu() {
     openButton.classList.toggle('open');
 }
 
+<<<<<<< Updated upstream
+=======
+openButton.addEventListener("click", audiobutton);
+  
+  function audiobutton() {
+audio.play()
+  }
+>>>>>>> Stashed changes

@@ -261,6 +261,7 @@ header{
     margin-top: 2em;
 }
 
+<<<<<<< Updated upstream
 .baseplate img {
     height: auto;
     max-width: 100%;
@@ -272,6 +273,13 @@ header{
     color: black;
     list-style-type: none;
     padding: 10px;
+=======
+.baseplate img{
+  height: auto;
+  width: 100%;
+  max-width: 1440px;
+  
+>>>>>>> Stashed changes
 }
 
 .lists h1{
