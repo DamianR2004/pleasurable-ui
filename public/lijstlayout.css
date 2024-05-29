@@ -13,6 +13,7 @@
 .lijsten-h1{
   padding-top: .5em;
   justify-self: center;
+  color: var(--primary-black);
 }
 
 .lijsten{
@@ -40,6 +41,7 @@
     transition: color .4s ease-out;
 }
 
+
   .lijst-items::after{
     content: '';
     width: 0;
@@ -53,6 +55,13 @@
     transition: width 0.3s linear;
   }
   .lijst-items:hover{
+    color: var(--primary-blue);
+  }
+  .lijst-items:focus::after{
+    width: 100%;
+    transition: width 0.3s linear;
+  }
+  .lijst-items:focus{
     color: var(--primary-blue);
   }
   
@@ -85,8 +94,11 @@
     color: #666666;
 }
 .aantal-huizen{
+  display: flex;
     grid-area: huizen;
+    gap: 5px;
     justify-self: end;
+    line-height: 1;
     /* color: #0071B3; */
     color: #666666;
     /* display: flex; */
@@ -101,4 +113,10 @@
 .num{
   font-weight: bold;
   color: black;
+}
+.house-icon{
+  height: 1em;
+  width: 1em;
+  padding-left: 2px;
+  bottom: 0;
 }
