@@ -6,70 +6,57 @@
     --hover-blue: #0a4669;
     --primary-grey: #E6F2F7;
   }
+.lijsten-main{
+  display: block;
+  text-align: center;
+}
+.lijsten-h1{
+  padding-top: .5em;
+  justify-self: center;
+}
+
 .lijsten{
-    padding-top: 3em ;
-    padding: 3em 1em 1em 1em;
+    padding: 2em 1em 1em 1em;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     display: grid;
     grid-template-columns:  repeat( auto-fit, minmax(18em, 1fr) );
-    gap: 1.5em;
+    gap: 1em;
 }
 /*  */
 .lijst-items{
     text-decoration: none;
     width: 100%;
-    /* border: 1px solid var(--primary-orange); */
-    border-radius: 10px;
+    border: 3px solid white;
+    border-radius: 5px;
     margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: none;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    background-color: var(--primary-grey);
 
-    color: #2F56B0;
+    /* color: #2F56B0; */
     position: relative;
     text-decoration: none;
     transition: color .4s ease-out;
 }
-/*  */
-/* p {
-    font-size: 2em;
-    max-width: 80%;
-  } */
-  
-  
-  .lijst-items:hover {
-    /* color: #457DFB; */
+
+  .lijst-items::after{
+    content: '';
+    width: 0;
+    height: 7px;
+    background-color: var(--primary-blue);
+    margin: auto;
+    display: block;
+  }
+  .lijst-items:hover::after{
+    width: 100%;
+    transition: width 0.3s linear;
+  }
+  .lijst-items:hover{
     color: var(--primary-blue);
-    right: 0;
-    text-decoration: none;
   }
   
-  .lijst-items:hover:after {
-    /* border-color: #457DFB; */
-    border-color: var(--primary-blue);
-    right: 0;
-  }
   
-  .lijst-items:after {
-    border-radius: .5em;
-    border-top: .5em solid #457DFB;;
-    content: "";
-    position: absolute;
-      right: 100%;
-      /* bottom: .14em; */
-      bottom: 0;
-      left: 0;
-    transition: right 1s cubic-bezier(0,.5,0,1),
-                border-color 1s ease-out;
-  }
-  
-  .lijst-items:hover:after {
-  right: 0;
-  }
-/*  */
-
-
 .lijsten-article{
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -83,7 +70,7 @@
     /* border: 3px solid var(--primary-orange); */
     border-radius: 10px;
     width: 100%;
-    height: 200px;
+    min-height: 210px;
     list-style-type: none;
     justify-content: center;
     text-align: center;
@@ -110,4 +97,8 @@
     width: 4em;
     opacity: 0;
 
+}
+.num{
+  font-weight: bold;
+  color: black;
 }
