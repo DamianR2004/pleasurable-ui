@@ -7,6 +7,7 @@ import fetchJson from './helpers/fetch-json.js'
 // Maak een nieuwe express app aan
 const app = express()
 
+const rating = []
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
@@ -36,32 +37,52 @@ app.get('/', function(request, response) {
 
 app.get('/lijsten', function (request, response) {
     fetchJson('https://fdnd-agency.directus.app/items/f_list').then((apiData) => {
-        console.log(apiData.data)
+        // console.log(apiData.data)
         response.render('lijsten.ejs', {data: apiData.data})
 	});
-	
 })
+
+app.get('/lijsten', function (request, response) {
+  fetchJson('https://fdnd-agency.directus.app/items/f_users').then((userData) => {
+      // console.log(apiData.data)
+      response.render('lijsten.ejs', {data: userData.data})
+});
+})
+
+// app.get('/lijsten', function(request, response) {
+//   fetchJson('https://fdnd-agency.directus.app/items/f_lists').then((lists) => {
+//     fetchJson('https://fdnd-agency.directus.app/items/f_users').then((users) => {
+//       response.render('lijsten.ejs', {
+//       lists: lists.data,
+//       users: users.data
+//       })
+//     });
+// 	});
+// })
+
+
 
 app.get('/rating', function (request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/f_list').then((apiData) => {
-      console.log(apiData.data)
+      // console.log(apiData.data)
       response.render('lijsten.ejs', {data: apiData.data})
   });
 })
 
-app.get('/lijst', function (request, response) {
+app.get('/lijst/:id', function (request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/f_list').then((apiData) => {
-      console.log(apiData.data)
-      response.render('lijsten.ejs', {data: apiData.data})
+      // console.log(apiData.data)
+      response.render('lijst.ejs', {data: apiData.data})
   });
 })
 
 app.get('/house', function (request, response) {
     fetchJson('https://fdnd-agency.directus.app/items/f_houses').then((apiData) => {
-        console.log(apiData.data)
+        // console.log(apiData.data)
         response.render('ratings', {data: apiData.data})
 	});
 })
+// 
 
 app.get('/lijsten/:id', function (request, response) {
     fetchJson('https://fdnd-agency.directus.app/items/f_list/' + request.params.id + '?fields=*.*.*,houses.f_houses_id.poster_image.id,houses.f_houses_id.poster_image.width,houses.f_houses_id.poster_image.height').then((apiData) => {
@@ -69,6 +90,20 @@ app.get('/lijsten/:id', function (request, response) {
         // console.log(apiData.data.houses) 
     })
   })
+
+  app.get('/lijsten', function(request, response) {
+    fetchJson('https://fdnd-agency.directus.app/items/f_list/' + request.params.id + '?fields=*.*.*,houses.f_houses_id.poster_image.id,houses.f_houses_id.poster_image.width,houses.f_houses_id.poster_image.height').then((lists) => {
+      fetchJson('https://fdnd-agency.directus.app/items/f_users').then((users) => {
+        response.render('lijsten.ejs', {
+        list: lists.data,
+        users: users.data
+        })
+      });
+    });
+  })
+
+
+  // 
 
   app.get('/notes', function (request, response) {
     Promise.all([
@@ -79,53 +114,43 @@ app.get('/lijsten/:id', function (request, response) {
     });
   });
 
-  app.get('/details/:house_id', function (request, response) {
-    fetchJson('https://fdnd-agency.directus.app/items/f_houses/' + request.params.id + '?fields=*.*.*,houses.f_houses_id.poster_image.id,houses.f_houses_id.poster_image.width,houses.f_houses_id.poster_image.height').then((apiData) => {
-        response.render('details.ejs', {house: apiData.data})  
-        // console.log(apiData.data.houses) 
-    })
-  })
-  
-
-app.get('/ratings/:list_id/:house_id', function (request, response) {
+app.get('/ratings', function (request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/f_users/').then((userData) => {
-    console.log(userData)
-      response.render('ratings', {
-        data: userData.data,
-        list_id: request.params.list_id,
-        house_id: request.params.house_id
-      })
+    // console.log(userData)
+      response.render('ratings', {data: userData.data})
   });
 })
 
 app.get('/rating', function (request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/f_users/').then((userData) => {
-    console.log(userData)
+    // console.log(userData)
       response.render('rating', {data: userData.data})
   });
-});
+})
 
 
-app.post('/ratings/:list_id/:house_id', function(request, response) {
+
+app.post ('/ratings', function(request, response) {
 
   console.log(request.body)
-
-  let body = JSON.stringify({
-    house: request.params.house_id,
-    list: request.params.list_id,
-    user: 3,
-    rating: JSON.stringify(request.body.rating),
-    note: request.body.notities
-  })
-  console.log(body)
   
   fetchJson('https://fdnd-agency.directus.app/items/f_feedback',{
     method: 'POST',
-    body: body,
+    body: JSON.stringify({
+      house: request.body.id,
+      list: 2,
+      user: 3,
+      rating: {
+        Algemeen: request.body.Algemeen,
+        Keuken: request.body.Keuken,
+
+      },
+    }),
     headers: {
       'Content-Type' : 'application/json; charset=UTF-8',
     },
   }).then((postResponse) => {
+    console.log(postResponse)
     response.redirect(303, '/')
   })
 })
