@@ -144,10 +144,6 @@ header{
 
     z-index: 100000;
 
-    &:hover{
-      background-color: var(--sub-orange);
-    }
-
     & p{
       color: var(--primary-white);
       font-size: .75rem;
@@ -508,6 +504,38 @@ input:checked + label,
   padding: 5px;
   max-width: 100%;
  }
+
+
+
+ .confirm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(50%);
+  font-size: 5vmin;
+
+ }
+
+ .confirmmessage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(180%);
+  font-size: 2vw;
+ }
+
+ .redirect h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vw;
+  margin-top: 80%;
+  color: #DE9000;
+
+ }
+
+
+
     @media screen and (min-width: 457px) {
 
       

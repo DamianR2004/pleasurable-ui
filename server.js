@@ -130,6 +130,7 @@ app.post('/ratings/:list_id/:house_id', function(request, response) {
       'Content-Type' : 'application/json; charset=UTF-8',
     },
   }).then((postResponse) => {
+
     console.log(3, postResponse);
     response.redirect(303, '/successtate')
   })
