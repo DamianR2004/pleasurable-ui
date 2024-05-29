@@ -25,7 +25,6 @@ valueDisplays.forEach(valueDisplay => {
     }, duration);
 })
 
-valueDisplays.forEach()
 
 for (let i = 0; i < links.length; i++) {
   links[i].addEventListener('click', function(event) {

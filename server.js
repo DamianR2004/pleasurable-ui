@@ -41,6 +41,14 @@ app.get('/lijsten', function (request, response) {
 	
 })
 
+
+app.get('/successstate', function (request, response) {
+      response.render('successstate.ejs')
+});
+
+
+
+
 app.get('/rating', function (request, response) {
   fetchJson('https://fdnd-agency.directus.app/items/f_list').then((apiData) => {
       console.log(apiData.data)
@@ -123,6 +131,6 @@ app.post('/ratings/:list_id/:house_id', function(request, response) {
     },
   }).then((postResponse) => {
     console.log(3, postResponse);
-    response.redirect(303, '/lijst')
+    response.redirect(303, '/successtate')
   })
 })
