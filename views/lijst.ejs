@@ -25,3 +25,30 @@
   <% }); %>
 </section>
  </main>
+
+ <script>
+  let links = document.querySelectorAll('.housedetails a');
+  for (let i = 0; i < links.length; i++) {
+    
+    links[i].addEventListener('click', function(event) {
+      fetch(this.href).then(function(response) {
+        return response.text()
+      }).then(function(responseHTML) {
+
+
+        console.log(responseHTML)
+        
+        let dummy = document.createElement('div')
+        dummy.innerHTML = responseHTML;
+        let outerRating = dummy.querySelector('.outer-rating')
+        console.log(outerRating)
+        let dialog = document.createElement('dialog')
+        dialog.appendChild(outerRating)
+        document.body.appendChild(dialog)
+        dialog.showModal()
+      })
+      event.preventDefault();
+    })
+  }
+
+ </script>
