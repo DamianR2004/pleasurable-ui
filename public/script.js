@@ -1,8 +1,13 @@
+import JSConfetti from 'js-confetti';
+
 const openButton = document.querySelector('.hamburger-button');
 const mobileMenu = document.querySelector('.header-list-left');
 const audio = new Audio("./door-bell-sound-99933.mp3");
+const submitButton = document.querySelector('input[type="submit"]');
 
-openButton.addEventListener("click", openMenu);
+if (openButton) {
+  openButton.addEventListener("click", openMenu); 
+}
 
 
 function openMenu() {
@@ -11,9 +16,18 @@ function openMenu() {
 }
 
 
-
+if (openButton) {
   openButton.addEventListener("click", audiobutton);
+}
   
-  function audiobutton() {
-audio.play()
-  }
+function audiobutton() {
+  audio.play()
+}
+
+
+
+submitButton.addEventListener("click", function() {
+  JSConfetti.addConfetti({
+    emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+  });
+});

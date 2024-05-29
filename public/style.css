@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  src: url("/public/ProximaNova/ProximaNova-Regular_2607783814.otf")
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +12,10 @@
     font-family: sans-serif;
     list-style: none;
     text-decoration: none;
+    font-family: 'Proxima Nova', sans-serif;
 }
+
+
 :html {
   --primary-orange: #F7A100;
   --primary-black: #333333;
@@ -242,13 +252,6 @@ header{
 }
 
 
-
-
-
-
-
-
-
 .baseplate{
     display: grid;
     grid-template-columns: 1fr;
@@ -262,37 +265,65 @@ header{
 .houses{
     background-color: var(--primary-grey);
     margin-top: 2em;
+    border-radius: 10px;
 }
 
-.housedetails
-
-& li{
-  margin: 10px;
-}
-
- & p{
-  padding: 10px;
-
- }
 
 .baseplate img{
-  object-fit: cover;
   height: auto;
   width: 100%;
   max-width: 1440px;
+  border-radius: 10px;
   
 }
 
 
-.users{
-  display: flex;
-  gap: 1em;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
-  position: relative;
+.housedetails{
+
+
+  & li{
+    margin: 15px;
+  }
+
+  & li:nth-of-type(1){
+    color: var(--primary-blue);
+    font-weight: 800;
+  }
+
+  & a{
+    color: var(--sub-orange);
+  }
+
 }
 
+.users{
+  display: flex;
+  gap: .5em;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1em;
+  position: relative;
+  overflow-x: scroll;
+
+  & li {
+    display: flex;
+    text-align: center;
+
+  }
+
+
+}
+
+dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &::backdrop{
+    filter: blur(80px);
+  }
+}
 
 .outer-rating{
   display: flex;
@@ -302,7 +333,7 @@ header{
 
 .rating{
 position: relative;
-background-color: #cccccc;
+background-color: var(--primary-grey);
 width: 500px;
 padding: 20px;
 
@@ -312,8 +343,8 @@ padding: 20px;
   border-radius: 50%;
 
   &:hover{
-    transform: scale(1.1);
-    transition: .3s;
+    transform: scale(1.01);
+    transition: .2s;
     cursor: pointer;
   }
 }
@@ -334,20 +365,24 @@ padding: 20px;
 }
 
 
- .top-rating button{
-  display: flex;
-  border: solid 2px orange;
+ .top-rating{
+ color:var(--primary-white);
+ 
+  & button:nth-of-type(1){
+    float: right;
+    position: relative;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   padding: 10px;
-  background-color: white;
-  color: black;
+  background-color: var(--hover-blue);
+  
 
   &:hover{
     transform: scale(1.1);
-    transition: .5s;
+    transition: .2s;
     transition-timing-function: ease-in-out;
-    
+  }
   }
 }
 
@@ -417,7 +452,8 @@ input:checked + label,
 
   &:hover{
     transform: scale(1.06);
-    transition: .3s;
+    transition: .2s;
+    
   }
 
  }
@@ -426,16 +462,42 @@ input:checked + label,
   margin-top: 3em;
 }
 
-.notes input{
+.notes input:nth-of-type(1){
   border: none;
   background: none;
   padding: 10px;
   cursor: pointer;
-  background-color: white;
-  border: solid 1px orange;
+  color: var(--primary-white);
+  background-color: var(--primary-orange);
   border-radius: 10px;
   margin-top: 20px;
+
+  &:hover{
+    transform: scale(1.06);
+    transition: .2s;
+    transition-timing-function: ease-in-out;
+  }
 }
+
+.notes input:nth-of-type(2){
+  border: none;
+  background: none;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--primary-white);
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+  margin-top: 20px;
+
+  &:hover{
+    transform: scale(1.06);
+    transition: .2s;
+    transition-timing-function: ease-in-out;
+    
+  }
+
+}
+
 
  textarea{
   box-sizing: border-box;

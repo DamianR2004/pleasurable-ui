@@ -2,51 +2,48 @@
 
 <section class="outer-rating">
 
-<article class="rating">
-    <article class="top-rating">
-    <button type="submit" title="close"> <%- include('./partials/closebutton') %> </button>
-</article>
+    <article class="rating">
+        <article class="top-rating">
+            <button type="submit" title="close"> <%- include('./partials/closebutton') %> </button>
+        </article>
 
-<section class="users">
-<% data.forEach( userRating => {%>
-    <ul>
-      <li><%= userRating.name %></li> 
-        <li><img class="image-size" src="https://fdnd-agency.directus.app/assets/<%=userRating.avatar%>"> </li>
-    </ul>
-  <% }); %>
-</section>
+        <section class="users">
+            <% data.forEach( userRating => {%>
+                <ul>
+                <li><%= userRating.name %></li> 
+                    <li><img class="image-size" src="https://fdnd-agency.directus.app/assets/<%=userRating.avatar%>"> </li>
+                </ul>
+            <% }); %>
+        </section>
 
-<article class="main-rating">
-    <form class="form-check-inline" method="post">
+        <form class="form-check-inline" action="/ratings/<%= list_id %>/<%= house_id %>" method="post">
+            <article class="main-rating">
+                <div class="common">
+                    <%- include('./partials/rating', {type: 'Algemeen'}) %><h2>Algemeen</h2>
+                </div>
+            
+                <ul>
+                    <li><%- include('./partials/rating', {type: 'Keuken'}) %><p>Keuken</p></li>
+                    <li><%- include('./partials/rating', {type: 'Tuin'}) %><p>Tuin</p></li>
+                    <li><%- include('./partials/rating', {type: 'Ligging'}) %><p>Ligging</p></li>
+                    <li><%- include('./partials/rating', {type: 'Badkamer'}) %><p>Badkamer</p></li>
+                    <li><%- include('./partials/rating', {type: 'Prijs'}) %><p>Prijs</p></li>
+                    <li><%- include('./partials/rating', {type: 'Oppervlakte'}) %><p>Oppervlakte</p></li>
+                </ul>
+            </article>
 
-<div class="common">
-    <%- include('./partials/rating', {type: 'Algemeen'}) %><h2>Algemeen</h2>
-</div>
-    
-<ul>
- <li><%- include('./partials/rating', {type: 'Keuken'}) %><p>Keuken</p></li>
- <li><%- include('./partials/rating', {type: 'Tuin'}) %><p>Tuin</p></li>
- <li><%- include('./partials/rating', {type: 'Ligging'}) %><p>Ligging</p></li>
- <li><%- include('./partials/rating', {type: 'Badkamer'}) %><p>Badkamer</p></li>
- <li><%- include('./partials/rating', {type: 'Prijs'}) %><p>Prijs</p></li>
- <li><%- include('./partials/rating', {type: 'Oppervlakte'}) %><p>Oppervlakte</p></li>
- <li><button type="submit"><p>+ Voeg critirea toe</button></p></li>
-</ul>
-    </form>
-    </article>
-    <article class="notes">
-    <h1>Notities</h1>
-        <form action="/ratings" id="notities" method="post"> 
-            <label for="notities">Maak notitie aan</label>
-                <textarea name="notities" form="notities"></textarea>
-                <input type="submit" value="Opslaan">
+            <article class="notes">
+                <h1>Notities</h1>
+                <label for="notities">Maak notitie aan</label>
+                <textarea name="notities"></textarea>
+                <input type="submit" value="Opslaan" id="saveinput">
                 <input type="submit" value="Verwijderen">
-        </form>
-</article>
+            </article>
 
-</article>
+        </form>
+
+    </article>
 
 </section>
 
 <p><%- include('./partials/foot') %></p>
-
