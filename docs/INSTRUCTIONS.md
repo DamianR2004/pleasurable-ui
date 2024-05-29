@@ -1,112 +1,134 @@
-# Interactive functionality
+# Pleasurable Interface
 
-Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is.
-
+Ontwerp en maak voor een opdrachtgever een interface waar gebruikers blij van worden
 
 ## Context
 
-Deze leertaak hoort bij sprint 9 "The Web is for Everyone". Dit is een leertaak die je uitvoert voor een opdrachtgever.
+Deze leertaak hoort bij sprint 11 "Pleasurable UI". Dit is een leertaak die je in een team uitvoert voor een opdrachtgever.
 
-In het college S09W1-01-Sprintplanning-The-Web-Is-For-Everyone wordt de opdracht uitgelegd.
-
-Bij deze leertaak hoort de deeltaak:
-- [Wireflow](https://github.com/fdnd-task/wireflow) (Sprint 05)
-- [UML Diagram](https://github.com/fdnd-task/uml-diagram) (Sprint 08)
-- [Progressive Enhancement](https://github.com/fdnd-task/progressive-enhancement)
+In het college S11W1-01-Sprintplanning en S11W1-02-Feature-branches-pull-requests wordt de opdracht en de werkwijze uitgelegd.
 
 
 ## Doel van deze opdracht
-
-Tim Berners-Lee, de uitvinder van het internet zei: "_The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect._"
-
-Het doel van deze opdracht is te leren hoe je een interactieve website kan ontwerpen en maken die voor iedereen toegankelijk is.
-
+Je leert hoe je met een team een interactieve website kan ontwerpen en maken.
 
 ## Werkwijze
+Je werkt in een team aan de website voor een opdrachtgever. 
+Zorg dat je duidelijk afspraken maakt en elkaar dagelijks op de hoogte houdt van vorderingen. Samen met jouw team ben je verantwoordelijk voor de planning, het samenwerkingsproces én het eindresultaat.
 
-Ontwerp en maak een interactieve functionaliteit voor je opdrachtgever op basis van een _user story_. De _user stories_ waar je aan gaat werken gaan over User Generatied Content. Hiervoor moet je data opslaan met een formulier en POST.
-
-
-Voor deze opdracht doorloop je alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
-
+Deze opdracht gaat over alle fases van de DLC [analyseren](#analyseren), [ontwerpen](#ontwerpen), [bouwen](#bouwen), [integreren](#integreren) en [testen](#testen).
 
 ## Analyseren
-
-In de analysefase inventariseer je wat er moet gebeuren om een taak uit te voeren. Je kiest een _user story_ waar je aan gaat werken en onderzoekt hoe je data gaat posten naar de server.
+In de analysefase inventariseer je wat er moet gebeuren om de leertaak uit te voeren. 
+Bekijk en bespreek al het gemaakte werk, maak afspraken met je team en een [planning](#samenwerken--planning). 
 
 ### Sprintplanning
-1. Lees de instructies van deze leertaak zorgvuldig door
+1. Lees de instructies van deze leertaak met je team zorgvuldig door
 2. Bekijk de verschillende fases van de DLC en wat je per fase gaat doen
-3. Bekijk de planning van [sprint 9](https://programma.fdnd.nl/data-driven-web/the-web-is-for-everyone) en wat je per week gaat doen
-4. Bespreek wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
-5. Kies een _user story_ over _User Generated Content_ uit de backlog van het project waar je aan gaat werken, of schrijf er zelf een
-6. Schets met je projectcoach per _user story_ hoe je data kan posten en of er (al) een POST endpoint is van de API en hoe deze werkt.
+3. Bekijk de [planning van sprint 11](https://programma.fdnd.nl/data-driven-web/pleasurable-ui) en wat je per week gaat doen
+4. Bespreek met het projectteam wat je aan werk verwacht en maak aantekeningen. (wat komt je bekend voor, wat heb je al vaker gedaan of wat lijkt je lastig)
+5. Bekijk het gemaakte werk van de teamleden zodat jullie een duidelijk beeld krijgen van wat er al gemaakt is
 
-#### Bronnen analyseerfase
+### Samenwerken & planning
+In de analysefase bespreek je als team welke werkzaamheden er zijn, wie wat gaat doen en maak je een planning. 
+Er is veel werk aan de winkel deze sprint, maak afspraken om elke dag aan het project te werken en hoe jullie elkaar op de hoogte houden van de vorderingen.
 
-* [Wat is een REST API nou echt: het basisidee](https://blog.wearefrank.nl/wat-is-een-rest-api-nou-echt-het-basisidee)
+1. Één teamlid forkt de leertaak, de hoofd-repo, en voegt teamleden toe als 'collaborators'
+2. De andere teamleden clonen de hoofd-repo, zo kun je makkelijk wijzigingen doorvoeren en ophalen
+3. Maak een _project board_ aan en koppel het aan de gezamenlijke _repository_ om bij te kunnen houden wie wat doet
+4. Plan voor de aankomende weken de reviews en noteer de planning in jullie _project board_.
+5. Bespreek regelmatig met je team welke werkzaamheden er zijn, **wie wat wanneer** gaat doen. Gebruik het project board om grip te houden op de planning, sleep taken naar _done_ als ze klaar zijn, schrijf nieuwe taken als dat nodig is. 
+
+### Materiaal voor samenwerken
+
+- [About Githhub Projects, quickstart en best practices](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+<!-- - [Making a pull-request](https://www.atlassian.com/git/tutorials/making-a-pull-request) (nb. wij gebruiken de feature-branch workflow) -->
+
+<!-- - [How to Collaborate on GitHub](https://code.tutsplus.com/tutorials/how-to-collaborate-on-github--net-34267) -->
+<!-- - [download het Team Canvas](https://github.com/fdnd-task/performance-matters-fast-website/blob/main/docs/Teamcanvas.pdf) -->
+<!-- - [Lees instructies over het gebruik van het Teamcanvas in de deeltaak uit sprint 1](https://github.com/fdnd-task/your-tribe-team-canvas) -->
 
 
 ## Ontwerpen
+In de ontwerpfase bepaal je met je team wat je gaat maken. 
+Bepaal de [sitemap & UML diagram](#sitemap--uml-diagram) van jullie website en per pagina de url/routes. 
+Schets daarna een [wireframe & breakdown](#wireframe-wireflow--breakdown) per onderdeel van de website. 
+Maak tot slot [code-afspraken](#code-afspraken). 
 
-In de ontwerpfase bedenk en schets je eerst wat je gaat maken. 
+### Sitemap & UML Diagram
+Bepaal welke pagina's jullie gaan ontwerpen en bouwen, welke url's daarbij horen en de data die erbij hoort. Doe dit met het hele team zodat iedereen op de hoogte is en jullie ideeën kunnen uitwisselen:
 
-### Wireflow
-Teken de interactie voor de _user story_ in een wireflow. Zorg dat je de verschillende states van het formulier, het versturen van data, een _succes state_ en mogelijke _errors_ ook tekent. 
+1. Teken een sitemap met alle pagina's voor de opdracht voor de opdrachtgever (overzicht-, detail-, formulierpagina, etc ...)
+2. Schrijf per pagina de url en de parameters die moet worden meegestuurd
+3. Werk alle routes uit: Schets de functies en methodes die worden uitgevoerd en de bijbehorende EJS
+4. Noteer welke data wordt opgehaald en gepost met de Directus-API en of het een GET of POST is
+5. Schrijf ook op welke data wordt doorgegeven aan een volgende functie, methode of view
 
-### Breakdown schets
-Maak een breakdown-schets en beschrijf de juiste HTML formulier-elementen die je nodig hebt. 
+### Wireframe, Wireflow & Breakdown
+Schets per pagina en onderdelen gezamenlijk een wireframe en/of wireflow en maak een breakdown van de HTML, CSS en Client-side JS. Het is belangrijk om dit gezamenlijk te doen, nu maak je met het team afspraken over code, semantiek en naamgeving. 
 
-### UML Diagram
-Schets een UML diagram met de routing en pseudo-code voor de POST data en control-flow van de node-code. 
+Maak voor elke pagina, of onderdeel, een ontwerp op basis van de huisstijl. (Bijvoorbeeld in Figma) Dit wordt het ontwerp dat jullie gaan realiseren. Het ontwerp zal tijdens de werkzaamheden veranderen. Dat is prima. Soms zal je de veranderingen bijhouden in het Figma file, soms is dat niet nodig. 
 
-### Bronnen ontwerpfase
-
-* [Wireframing User Flow with Wireflows](https://balsamiq.com/learn/articles/wireflows/)
-* [What is a UML diagram?](https://miro.com/diagramming/what-is-a-uml-diagram/)
-* [The Input (Form Input) element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input)
-* [The Form element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
-
-
-## Bouwen
-
-### Inrichten ontwikkelomgeving
-
-Je gaat een server-side website bouwen met Node/Express/EJS gebaseerd op een REST API met JSON. Installeer de Node ontwikkelomgeving en installeer de packages die je nodig hebt. Maak de files en folders aan die je nodig hebt op de Node server. Gebruik hiervoor `npm install`, en kopieer uit je project uit de vorige sprint de code die je mee wilt nemen.
-
-### Progressive enhancement
-
-1. Eerst bouw je de _core functionality_ van je website in HTML en met behulp van formulieren en NodeJS, voor het server-side afhandelen van het posten van data. (Content layer)
-2. Daarna voeg je CSS toe voor feedback voor de gebruiker en om de huisstijl toe te passen. (Presentation layer)
-3. Zo nodig voeg je CSS en client-side JS toe om de User Experience te verbeteren. (Client-side scripting)
-
-#### Bronnen bouwefase
-
-* [Understanding Progressive Enhancement](https://alistapart.com/article/understandingprogressiveenhancement/)
+### Code afspraken
+Maak code afspraken met je team over de Node-code, (semantische) HTML, gestructureerde CSS en conventies.
+Denk na over de HTML structuur, en het voorkomen van layout shifts, toepassen van perceived performance en loading hints aan de browser en het toepassen van responsive images. Maak afspraken over de volgorde van de CSS, van generiek-naar-specifiek. Bedenk een goede volgorde in de Node en de routing. Maak afspraken over het schrijven van comments. Etc ..
 
 
-## Integreren
-In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien.
 
-Als je helemaal klaar bent en alles lokaal werkt ga je verder met het publiceren van jouw project op internet. Omdat we met Node werken is dit iets ingewikkelder dan voorheen, er moet namelijk een serveromgeving opgestart worden. Wij gebruiken cyclic.sh als hostingpartij maar je mag natuurlijk je eigen voorkeur volgen als die anders is.
+### Bouwen
+In de bouwfase realiseer je de beslissingen uit de ontwerpfase. 
+Met het team werk je op 1 code base. 
+Zet je code [Mobile First](#mobile-first) op en werk met [Progressive Enhancement](#progressive-enhancement). 
+In je team werken jullie met de [feature branches](#feature-branches).
 
-## Testen
+#### Feature branches
+Met je team ga je allemaal aan features werken, jullie maken verschillende variaties van dezelfde features, of je verdeeld de werkzaamheden en werkt an verschillende features. 
 
-Om er voor te zorgen dat de functionaliteit voor iedereen toegankelijk is, test je je werk in verschillende browsers en devices.
+Als je aan een feature gaat werken maak je eerst op GitHub een nieuwe _branch_ aan vanaf de main branch, vervolgens _pull_ je deze naar je lokale systeem. Je maakt regelmatig commits en implementeert de 'feature'. Als je klaar bent push je alles naar github en doe je vanaf de feature-branch een pull-request naar main. In het pull-request wordt jouw code bekeken, getest en goedgekeurd door jouw teamleden. 
 
-Gebruik [caniuse.com](https://caniuse.com) om te achterhalen welke technieken browsers ondersteunen. 
+Pas de code afspraken toe en en doe een code-review met je team voordat je de code merged (integreert) met de main branch.
+
+#### Materiaal Feature branches
+
+- [Using branches](https://www.atlassian.com/git/tutorials/using-branches)
+- [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+
+
+
+#### Mobile first
+Zorg dat je met je team Mobile First bouwt. Zet eerst de (semantische) HTML van de pagina's en/of onderdelen op. Pas daarna CSS toe om de huisstijl goed toe te passen. Voeg daarna media-queries of andere responsive CSS technieken toe voor M, L en of XL schermen. 
+
+#### Progressive Enhancement
+Bouw de website volgens het principe van Progressive Enhancement. Zorg dat eerst de _functional_ en _reliable_ laag het goed doet, daarna de _usable_ laag, voordat je gaat experimenteren met de _pleasurable UI_. 
+
+### Integreren
+In de integratiefase voer je de aanpassingen door zodat iedereen ze kan zien en er op verder kan bouwen. 
+
+1. Integreer jouw code naar de gezamenlijke repo
+2. Maak een *pull-request* voor de feature waar je aan hebt gewerkt
+3. Handel het *pull-request* af, zorg voor een helder gedocumenteerd *pull-request* door bij de afhandeling relevante berichten te typen. 
+4. Zorg dat je teamgenoten de nieuwe code integreren
+
+
+#### Materiaal
+
+- [Creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+- [Feature Branch: A Quick Walk Through Git Workflow](https://blog.mergify.com/feature-branch-a-quick-walk-through-git-workflow/)
+
+
+### Testen
+In de testfase controleer je of jouw aanpassingen werken zoals bedoeld. 
+
 
 
 ## Criteria
 *Definitions of done*
 
-
 Deze opdracht is done als:
 
-- [ ] Jouw gebruikers kunnen iets achterlaten of toevoegen op jouw website (user generated content)
-- [ ] Je website is online gepubliceerd
-- [ ] Je hebt gewerkt volgens de verschillende fases van de development-lifecycle en je hebt je proces bijgehouden in de Wiki
-- [ ] Je hebt interactieve functionaliteit ontworpen en gemaakt met Node, Express, EJS en een REST API en HTML, CSS en misschien client-side JS
-- [ ] Je hebt je werk getest in verschillende browsers en devices en de test gedocumenteerd in je wiki
-- [ ] Je hebt in de Readme bij 'Kenmerken' uitgelegd wat Progressive Enhancement is en hoe je dit hebt toegepast
+- [ ]  Je hebt je website samen ontworpen en gemaakt en de website is online gepubliceerd
+- [ ]  Je hebt je proces bijgehouden van het iteratief (samen)werken in de Wiki
+- [ ]  Je toont aan dat je in de bouw-, integratie- en testfase verschillende methoden en technieken hebt ingezet om samen te werken met code
+- [ ]  Je hebt client-side scripting technieken gebruikt om een interface te ontwerpen en maken waar gebruikers blij van worden
+
 

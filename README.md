@@ -26,7 +26,6 @@
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
 
-
 ## Bronnen
 
 ## Licentie
