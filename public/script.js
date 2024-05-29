@@ -4,6 +4,7 @@ const openButton = document.querySelector('.hamburger-button');
 const mobileMenu = document.querySelector('.header-list-left');
 const audio = new Audio("/door-bell-sound-99933.mp3");
 const links = document.querySelectorAll('.housedetails a');
+const closeButton = document.getElementById("close");
 
 let valueDisplays = document.querySelectorAll(".num");
 let interval = 1000;
@@ -43,6 +44,10 @@ for (let i = 0; i < links.length; i++) {
     event.preventDefault();
   })
 }
+closeButton.addEventListener("click", () => {
+  dialog.close();
+  openCheck(dialog);
+});
 
 // 3. functions
 function openMenu() {
