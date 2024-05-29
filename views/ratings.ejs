@@ -4,7 +4,7 @@
 
 <article class="rating">
     <article class="top-rating">
-    <button type="submit" title="close"> <%- include('./partials/closebutton') %> </button>
+    <button type="submit" title="close" class="close-button" id="close"> <%- include('./partials/closebutton') %> </button>
 </article>
 
 <section class="users">
@@ -19,23 +19,23 @@
 <form class="form-check-inline" action="/ratings/<%= list_id %>/<%= house_id %>" method="post">
     <article class="main-rating">
         <div class="common">
-            <%- include('./partials/rating', {type: 'Algemeen'}) %><h2>Algemeen</h2>
+            <%- include('./partials/rating', {type: 'Algemeen'}) %><h2>Algemene score:</h2>
         </div>
     
         <ul>
-            <li><%- include('./partials/rating', {type: 'Keuken'}) %><p>Keuken</p></li>
-            <li><%- include('./partials/rating', {type: 'Tuin'}) %><p>Tuin</p></li>
-            <li><%- include('./partials/rating', {type: 'Ligging'}) %><p>Ligging</p></li>
-            <li><%- include('./partials/rating', {type: 'Badkamer'}) %><p>Badkamer</p></li>
-            <li><%- include('./partials/rating', {type: 'Prijs'}) %><p>Prijs</p></li>
-            <li><%- include('./partials/rating', {type: 'Oppervlakte'}) %><p>Oppervlakte</p></li>
+            <li><%- include('./partials/rating', {type: 'Keuken'}) %><p>Keuken:</p></li>
+            <li><%- include('./partials/rating', {type: 'Tuin'}) %><p>Tuin:</p></li>
+            <li><%- include('./partials/rating', {type: 'Ligging'}) %><p>Ligging:</p></li>
+            <li><%- include('./partials/rating', {type: 'Badkamer'}) %><p>Badkamer:</p></li>
+            <li><%- include('./partials/rating', {type: 'Prijs'}) %><p>Prijs:</p></li>
+            <li><%- include('./partials/rating', {type: 'Oppervlakte'}) %><p>Oppervlakte:</p></li>
         </ul>
     </article>
 
     <article class="notes">
-        <h1>Notities</h1>
-        <label for="notities">Maak notitie aan</label>
-        <textarea name="notities"></textarea>
+        <h1>Notities:</h1>
+        <label for="notities"></label>
+        <textarea name="notities" placeholder="Maak een notitie aan..."></textarea>
         <input type="submit" value="Opslaan" id="saveinput">
         <input type="submit" value="Verwijderen" formnovalidate>
     </article>

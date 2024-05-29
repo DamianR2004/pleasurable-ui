@@ -216,7 +216,6 @@ header{
     & a{
       color: black;
       padding: 1em;
-      borr
     }
 
     &.open,
@@ -242,9 +241,6 @@ header{
       font-size: .75rem;
     }
   }
-
-
-
 }
 
 
@@ -311,14 +307,19 @@ header{
 }
 
 dialog {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  &::backdrop{
-    filter: blur(80px);
-  }
+  border-radius: 5px;
+  background-color: white;
+  border: 5px solid white
+}
+dialog::backdrop{
+  /* backdrop-filter: blur(15px); */
+  background-color: black;
+  opacity: 65%;
 }
 
 .outer-rating{
@@ -326,12 +327,12 @@ dialog {
   justify-content: center;
   align-items: center;
 }
-
 .rating{
 position: relative;
-background-color: var(--primary-grey);
+/* background-color: var(--primary-grey); */
 width: 500px;
 padding: 20px;
+color: var(--primary-black);
 
 & img{
   width: 60px;
@@ -371,13 +372,15 @@ padding: 20px;
   border-radius: 50%;
   cursor: pointer;
   padding: 10px;
-  background-color: var(--hover-blue);
+  /* background-color: var(--hover-blue); */
+  background-color: transparent;
   
 
   &:hover{
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     transition: .2s;
     transition-timing-function: ease-in-out;
+    background-color: rgb(235, 235, 235);
   }
   }
 }
@@ -404,12 +407,15 @@ padding: 20px;
 
 .rate label{
   display: block;
-  padding: .125em;
+  /* padding: .125em; */
+  padding: 3px;
   color: grey;
 }
 
 .rate label::after{
   content: "★";
+  width: 3em;
+  height: 3em;
 }
 .rate input{
   position: absolute;
