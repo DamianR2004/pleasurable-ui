@@ -129,3 +129,5 @@ app.post('/ratings/:list_id/:house_id', function(request, response) {
     response.redirect(303, '/')
   })
 })
+
+// test
