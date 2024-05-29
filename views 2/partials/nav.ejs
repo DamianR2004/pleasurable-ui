@@ -1,0 +1,30 @@
+<%- include('top') %>
+
+<header>
+	<div class="nav-wrapper">
+		<nav class="header-left">
+			<button class="hamburger-button">
+				<span></span><span></span><span></span>
+				<p>Menu</p>
+			</button>
+			
+			<a class="logo" href="https://www.funda.nl"><%- include('fundalogomain') %></a>
+
+			<ul class="header-list-left">
+				<li><a href="https://www.funda.nl/zoeken/koop/?selected_area=%5B%22nl%22%5D">Kopen</a></li>
+				<li><a href="https://www.funda.nl/zoeken/huur/?selected_area=%5B%22nl%22%5D">Huren</a></li>
+				<li><a href="https://www.funda.nl/producten-en-diensten/verkoop-je-huis-op-funda/">Verkopen</a></li>
+				<li><a href="https://www.funda.nl/account/mijn-huis/">Mijn Huis</a></li>
+			</ul>
+		</nav>
+
+		<nav class="header-right">
+			<ul class="header-list-right">
+				<li><a href="/lijsten"> <%- include('housebutton') %> <span>Favorieten</span> </a> </li>
+				<li><a href="https://www.funda.nl/account/"> <%- include('useravatar') %> <span> Account</span> </a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<%- include('foot') %>
