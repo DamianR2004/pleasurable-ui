@@ -1,0 +1,29 @@
+<p><%- include('./partials/nav') %></p>
+
+<div class="confirm">
+    <h1>Gelukt!</h1>
+</div>
+
+<div class="confirmmessage">
+    <h2>Uw beoordeling is achtergelaten.</h2>
+</div>
+
+<div class="redirect">
+    <h3><a href="/">Keer terug naar de hoofdpagina</a></h3>
+</div>
+
+    <script>
+
+        const jsConfetti = new JSConfetti();
+
+            window.onload = function() {
+
+            jsConfetti.addConfetti({
+                emojis: ['🏠', '⭐️', '✨', '🌟', '💫'],
+                emojiSize: 80,
+                confettiNumber: 40,
+            });
+        };
+    </script>
+
+<p><%- include('./partials/foot') %></p>

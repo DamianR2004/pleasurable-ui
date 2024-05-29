@@ -150,7 +150,12 @@ app.post ('/ratings', function(request, response) {
       'Content-Type' : 'application/json; charset=UTF-8',
     },
   }).then((postResponse) => {
+<<<<<<< Updated upstream
     console.log(postResponse)
     response.redirect(303, '/')
+=======
+    console.log(3, postResponse);
+    response.redirect(303, '/successstate')
+>>>>>>> Stashed changes
   })
 })
