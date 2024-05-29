@@ -7,7 +7,6 @@ import fetchJson from './helpers/fetch-json.js'
 // Maak een nieuwe express app aan
 const app = express()
 
-
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
 
